@@ -1,0 +1,16 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Krunchly</title>
+        {% else %}
+        <title>Welcome to Krunchly</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            <h2>Krunchly! URL Shortener</h2>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

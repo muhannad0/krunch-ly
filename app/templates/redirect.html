@@ -1,0 +1,25 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Krunchly</title>
+        {% else %}
+        <title>Welcome to Krunchly</title>
+        {% endif %}
+        {% if link %}
+        <meta http-equiv = "refresh" content = "2; url = {{ link }}" />
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            <h2>Krunchly! URL Shortener</h2>
+        </div>
+        <hr>
+        {% if link %}
+        <p>Redirecting to <a href="{{ link }}">{{ link }}</a></p>
+        {% endif %}
+        {% if msg %}
+        <p>{{ msg }}</p>
+        <p><a href="{{ url_for('index') }}">Back</a></p>
+        {% endif %}
+    </body>
+</html>

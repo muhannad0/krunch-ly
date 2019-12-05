@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+    <td>ID</td><td>GenTime</td><td>GenLink</td><td>DestLink</td>
+    {% for link in links %}
+    <tr>    
+        <td>{{ link.id }}</td>
+        <td>{{ link.genTime }}</td>
+        <td><a href="{{ url_for('redirect', shortUrl=link.shortLink) }}">{{ url_for('redirect', shortUrl=link.shortLink) }}</a></td>
+        <td><a href="{{ link.longLink }}">{{ link.longLink }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<p><a href="{{ url_for('index') }}">Back</a></p>
+{% endblock %}

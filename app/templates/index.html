@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% if link %}
+<p>Your generated link is <a href="{{ link }}">{{ link }}</a><br>
+<form action="">
+    <input type="text", name="shortlink", value=" {{ link }}">
+</form>
+</p>
+<p><a href="{{ url_for('index') }}">Back</a></p>
+{% else %}
+<p>Ready...</p>
+{% endif %}
+
+{% if form %}
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.longLink.label }}<br>
+        {{ form.longLink }}<br>
+        {% for error in form.longLink.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endif %}
+{% endblock %}
