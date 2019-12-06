@@ -1,6 +1,6 @@
 FROM python:3.7-slim
 
-RUN adduser -D krunchly
+RUN useradd --create-home --shell /bin/bash krunchly
 
 WORKDIR /home/krunchly
 
