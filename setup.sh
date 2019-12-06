@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 source venv/bin/activate
 if [ "$DATABASE" = "mysql" ]
 then
