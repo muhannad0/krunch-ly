@@ -6,7 +6,13 @@ A small Python Flask application to generate short links
 - Redirect to original link
 - Show all generated links
 
-## Installation
+## Running with Docker
+```
+docker build -t krunchly:latest .
+docker run -d -p 8000:5000 --rm krunchly:latest
+```
+
+## Installation on a Linux Machine
 These installation steps were done on Ubuntu 18.04 LTS. YMMV on other OS, but the general idea is the same. Basically you need a Python 3 environment, a webserver (I'm using gunicorn and nginx here) and a MySQL database.
 
 ### Install required packages
