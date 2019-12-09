@@ -12,7 +12,12 @@ Build and run the container.
 docker build -t krunchly:latest .
 docker run -d -p 8000:5000 --rm krunchly:latest
 ```
-
+In order to connect to an external database, you can pass your own variables to the docker run command.
+```
+docker run -d -p 8000:5000 --rm -e SECRET_KEY=super-secret-key \
+        -e DATABASE_URL=mysql+pymysql://<db_user>:<db_password>@<db_host>:<db_port>/<db_name> \
+        krunchly:latest
+```
 Setup nginx as mentioned below.
 ## Installation on a Linux Machine
 These installation steps were done on Ubuntu 18.04 LTS. YMMV on other OS, but the general idea is the same. Basically you need a Python 3 environment, a webserver (I'm using gunicorn and nginx here) and a MySQL database.
