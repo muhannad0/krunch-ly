@@ -2,6 +2,9 @@ FROM python:3.7-slim
 
 RUN useradd --create-home --shell /bin/bash krunchly
 
+RUN apt-get update && \
+apt-get isntall -y --no-install-recommends netcat-openbsd
+
 WORKDIR /home/krunchly
 
 COPY requirements.txt requirements.txt
